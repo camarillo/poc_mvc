@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER") // NOTACION PARA EL NOMBRE DE TABLA
-public class User {
+public class Usuario {
     @Id // NOTACION PARA INDICAR EL INDICE PRINCIPAL
     @GeneratedValue(strategy=GenerationType.AUTO) // NOTACION PARA INDICAR QUE EL CAMPO SERA AUTONUMERICO
     @Column(name = "N_ID") // NOTACION PARA INDICAR EL NOMBRE DE LA COLUMNA

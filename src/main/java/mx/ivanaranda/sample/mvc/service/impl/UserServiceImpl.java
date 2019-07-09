@@ -5,39 +5,39 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mx.ivanaranda.sample.mvc.entity.User;
-import mx.ivanaranda.sample.mvc.repository.UserRepository;
-import mx.ivanaranda.sample.mvc.service.UserService;
+import mx.ivanaranda.sample.mvc.entity.Usuario;
+import mx.ivanaranda.sample.mvc.repository.UsuarioRepository;
+import mx.ivanaranda.sample.mvc.service.UsuarioService;
 
 @Service("userService") // NOMBRE PARA EL USER SERVICE
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UsuarioService {
 	
 	@Autowired
-	UserRepository repository;
+	UsuarioRepository repository;
 
 	@Override
-	public User insertarUser(User user) {
-		return repository.save(user);
+	public Usuario insertarUsuario(Usuario usuario) {
+		return repository.save(usuario);
 	}
 
 	@Override
-	public User actualizarUser(User user) {
-		return repository.save(user);
+	public Usuario actualizarUsuario(Usuario usuario) {
+		return repository.save(usuario);
 	}
 
 	@Override
-	public boolean eliminarUser(User user) {
-		repository.delete(user);
-		return !repository.existsById(user.getId());
+	public boolean eliminarUsuario(Usuario usuario) {
+		repository.delete(usuario);
+		return !repository.existsById(usuario.getId());
 	}
 
 	@Override
-	public List<User> ver() {
-		return (List<User>) repository.findAll();
+	public List<Usuario> lista() {
+		return (List<Usuario>) repository.findAll();
 	}
 
 	@Override
-	public List<User> verPorSexo(String sexo) {
+	public List<Usuario> listaPorSexo(String sexo) {
 		return repository.findBySexo(sexo);
 	}
 
