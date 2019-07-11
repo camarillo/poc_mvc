@@ -10,8 +10,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USER") // NOTACION PARA EL NOMBRE DE TABLA
 public class Usuario {
+	// LOS TIPOS DE PARA GenerationType SON:
+	// AUTO: SE CREAN LOS AUTOINCREMENTABLES CON AYUDA DEL HIBERNATE Y SQL (TABLA:hibernate_sequence) 
+	//		SI SE REQUIERE QUE NO APAREZCA LA TABLA DE SQL, SE AGREGA EN application.properties LO SIGUIENTE:
+	//		spring.jpa.hibernate.use-new-id-generator-mappings=false
+	// IDENTITY: SE ASIGNAN PRIMARY KEY A LOS CAMPOS AUTOINCREMENTABLES  
     @Id // NOTACION PARA INDICAR EL INDICE PRINCIPAL
-    @GeneratedValue(strategy=GenerationType.AUTO) // NOTACION PARA INDICAR QUE EL CAMPO SERA AUTONUMERICO
+    @GeneratedValue(strategy=GenerationType.IDENTITY) // NOTACION PARA INDICAR QUE EL CAMPO SERA AUTOINCREMENTABLE
     @Column(name = "N_ID") // NOTACION PARA INDICAR EL NOMBRE DE LA COLUMNA
     private Long id;
 
