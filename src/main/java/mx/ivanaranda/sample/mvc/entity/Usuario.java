@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER") // NOTACION PARA EL NOMBRE DE TABLA
+@Table(name = "USUARIO") // NOTACION PARA EL NOMBRE DE TABLA
 public class Usuario {
 	// LOS TIPOS DE PARA GenerationType SON:
 	// AUTO: SE CREAN LOS AUTOINCREMENTABLES CON AYUDA DEL HIBERNATE Y SQL (TABLA:hibernate_sequence) 
@@ -20,13 +20,13 @@ public class Usuario {
     @Column(name = "N_ID") // NOTACION PARA INDICAR EL NOMBRE DE LA COLUMNA
     private Long id;
 
-    @Column(name = "C_NAME")
-    private String name;
+    @Column(name = "C_NOMBRE")
+    private String nombre;
 
     @Column(name = "C_EMAIL")
     private String email;
 
-    @Column(name = "N_edad")
+    @Column(name = "N_EDAD")
     private Integer edad;
     
     @Column(name = "C_SEXO")
@@ -40,12 +40,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getEmail() {
@@ -73,9 +73,11 @@ public class Usuario {
 	}
 
 	// SOBRESCRIENDO LA CLASE TO STRING PARA MOSTRAR EL OBJETO.
+	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", edad=" + edad + ", sexo=" + sexo + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", edad=" + edad + ", sexo=" + sexo
+				+ "]";
 	}
     
     

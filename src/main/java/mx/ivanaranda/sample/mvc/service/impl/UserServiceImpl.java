@@ -26,9 +26,17 @@ public class UserServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public boolean eliminarUsuario(Usuario usuario) {
-		repository.delete(usuario);
-		return !repository.existsById(usuario.getId());
+	public int eliminarUsuario(Usuario usuario) {
+		int statusBorrado = 0; // NO EXISTE EL REGISTRO
+		if (repository.existsById(usuario.getId())) {
+			repository.delete(usuario);
+			if (repository.existsById(usuario.getId())) {
+				statusBorrado = 2; // PROBLEMA AL BORRAR
+			} else {
+				statusBorrado = 1; // BORRADO EXITOSO
+			}
+		}
+		return statusBorrado;
 	}
 
 	@Override

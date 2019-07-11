@@ -13,21 +13,21 @@ public interface UsuarioService {
 	 * @param Usuario
 	 * @return User
 	 */
-	public Usuario insertarUsuario(Usuario user);
+	public Usuario insertarUsuario(Usuario usuario);
 	
 	/**
 	 * ACTUAIZAR UN USUARIO
 	 * @param user
 	 * @return
 	 */
-	public Usuario actualizarUsuario(Usuario user);
+	public Usuario actualizarUsuario(Usuario usuario);
 	
 	/**
 	 * ELIMINAR UN USUARIO
 	 * @param user
 	 * @return
 	 */
-	public boolean eliminarUsuario(Usuario user);
+	public int eliminarUsuario(Usuario usuario);
 	
 	/**
 	 * REGRESA UNA LISTA DE TODOS LOS USUARIOS
