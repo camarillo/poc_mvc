@@ -76,7 +76,9 @@
 			    <label for="sexo">Sexo</label>
 			    <input required="required" name="sexo" type="text" class="form-control" id="sexo" placeholder="Sexo" ng-model="usuario.sexo">
 			  </div>
-			  <button type="button" class="btn btn-success">Guardar</button>
+			  <button type="button" class="btn btn-success" ng-disabled="!formularioUsuario.$valid" ng-click="guardar(usuario)">Guardar</button>
+			  <button type="button" class="btn btn-success" ng-click="actualizar(usuario)" >Actualizar</button>
+
 <!-- 			  <button type="submit" ng-disabled="!formularioUser.$valid" ng-show="verAccion(1)" ng-click="guardar(user)" class="btn btn-success">Guardar</button> -->
 <!-- 			  <button type="submit" ng-show="verAccion(2)" ng-click="actualizar(user)" class="btn btn-success">Actualizar</button> -->
 <!-- 			  <button type="submit" ng-click="cambiarAccion(0)" class="btn btn-warning pull-right">Regresar</button> -->

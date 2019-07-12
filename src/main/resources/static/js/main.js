@@ -40,5 +40,37 @@ app.controller('usuarioCtrl', function($scope,$http) {
 		$scope.usuario = usuario;
 	}
 
+	
+	$scope.guardar = function(usuario) {
+		$http({
+			url : '/usuario/usuario',
+			method: "POST",
+			data: usuario
+		}).then(function(response){
+			swal("EXITO","Se guardo correctamente", "success");
+			$scope.usuario = {};
+//			$scope.cambiarAccion(0);
+//			$scope.consultarUsers();
+		},function(response){
+			console.log(response);
+		});
+	}
+
+	$scope.actualizar = function(usuario) {
+		$http({
+			url : '/usuario/usuario',
+			method: "PUT",
+			data: usuario
+		}).then(function(response){
+			swal("EXITO","Se actualizo correctamente", "success");
+			$scope.usuario = {};
+//			$scope.cambiarAccion(0);
+//			$scope.consultarUsers();
+		},function(response){
+			console.log(response);
+		});
+	}
+
+	
 });
 
