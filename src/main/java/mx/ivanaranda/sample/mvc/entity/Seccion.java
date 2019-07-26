@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="SECCION")
 public class Seccion {
@@ -20,6 +22,7 @@ public class Seccion {
 	@Column(name="C_NOMBRE")
 	private String nombre;
 
+	
 	@ManyToOne
 	@JoinColumn(name="N_TAB_ID")
 	private Tab tab; 
